@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EntryTableViewCellDelegate: class {
+    func switchToggledOnCell(cell: EntryTableViewCell)
+}
+
 class EntryTableViewCell: UITableViewCell {
     // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
@@ -16,19 +20,21 @@ class EntryTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     var entry: Entry?
+    weak var delegate: EntryTableViewCellDelegate?
     
     // MARK: - Helper Functions
     func setEntry(entry: Entry, averageHappiness: Int) {
         self.entry = entry
+        updateUI(averageHappiness: averageHappiness)
     }
     
     func updateUI(averageHappiness: Int) {
         guard let entry = entry else {return}
         titleLabel.text = entry.title
         isEnabledSwitch.isOn = entry.isIncluded
-        
-        //Update higherOrLowerLabel after notifications
+        higherOrLowerLabel.text = entry.happiness >= averageHappiness ? "Higher" : "Lower"
     }
-    
-    
+    @IBAction func toggledIsIncluded(_ sender: Any) {
+        delegate?.switchToggledOnCell(cell: self)
+    }
 }
