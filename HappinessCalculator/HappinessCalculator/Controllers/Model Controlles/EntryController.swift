@@ -12,8 +12,8 @@ import Foundation
 class EntryController {
     //Our shared instance
     static var entries: [Entry] =  {
-        var entry1 = Entry(title: "Reading", happiness: 7, isIncluded: true)
-        var entry2 = Entry(title: "Riding my bike", happiness: 10, isIncluded: false)
+        var entry1 = Entry(title: "Reading", happiness: 5, isIncluded: true)
+        var entry2 = Entry(title: "Riding my bike", happiness: 1, isIncluded: false)
         var entry3 = Entry(title: "Waking up", happiness: 1, isIncluded: true)
         var entry4 = Entry(title: "Reading documentation", happiness: 10, isIncluded: false)
         return [entry1, entry2, entry3, entry4]
