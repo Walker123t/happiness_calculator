@@ -22,7 +22,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" id="8qQ-ob-Rmy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" id="8qQ-ob-Rmy" customClass="EntryTableViewCell" customModule="NotificationPatternsJournal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="52.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8qQ-ob-Rmy" id="48R-Wp-TcX">
@@ -58,6 +58,11 @@
                                         <constraint firstItem="Y0P-qM-XG8" firstAttribute="centerY" secondItem="48R-Wp-TcX" secondAttribute="centerY" id="llY-X0-SEX"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="higherOrLowerLabel" destination="9Qr-9f-wuQ" id="nBE-fk-PJx"/>
+                                    <outlet property="isEnabledSwitch" destination="Y0P-qM-XG8" id="WPj-VH-55x"/>
+                                    <outlet property="titleLabel" destination="lca-xg-8F4" id="HXd-6S-dGZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
